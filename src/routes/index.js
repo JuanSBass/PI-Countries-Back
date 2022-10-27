@@ -32,7 +32,7 @@ axios
   return arrData;
 })
 .then((country) => Country.bulkCreate(country))
-.catch(err => {return {error: err.message}});
+// .catch(err => {return {error: err.message}});
 
 
 router.use("/countries", countriesRouter);
