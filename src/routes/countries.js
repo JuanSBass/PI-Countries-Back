@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
       });
       const countryFiltrado = countries.filter(pais => pais.name.toLowerCase().includes(name.toLowerCase()))
       
-      countries.length < 1 
+      countryFiltrado.length < 1 
       ? res.status(404).send("País inexistente")
       : res.status(200).send(countryFiltrado);
     }

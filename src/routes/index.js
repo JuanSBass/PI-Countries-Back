@@ -31,8 +31,7 @@ axios
   });
   return arrData;
 })
-.then((country) => Country.bulkCreate(country))
-// .catch(err => {return {error: err.message}});
+.then((country) => Country.bulkCreate(country));
 
 
 router.use("/countries", countriesRouter);
