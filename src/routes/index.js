@@ -19,16 +19,16 @@ axios
 .then((data) => {
   const arrData = [];
   data.map((pais) => {
-    arrData.push({
+    arrData.forEach({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
       flag: pais.flags[0],
-      continent: pais.continents[0],
-      capital: pais.capital,
-      subregion: pais.subregion,
-      population: pais.population,
-      maps: pais.maps.googleMaps,
-      area: pais.area
+      continent: pais.continents[0] && "sin información",
+      capital: pais.capital && "sin información",
+      subregion: pais.subregion && "sin información",
+      population: pais.population && "sin información",
+      maps: pais.maps.googleMaps && "sin información",
+      area: pais.area && "sin información",
     });
   });
   return arrData;
