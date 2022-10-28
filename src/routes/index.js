@@ -18,7 +18,7 @@ axios
 .then((response) => response.data)
 .then((data) => {
   const arrData = [];
-  data.forEach((pais) => {
+  data.map((pais) => {
     arrData.push({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
