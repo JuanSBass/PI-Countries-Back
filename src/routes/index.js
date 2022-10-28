@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const { Country, Activity } = require("../db");
+const { Country } = require("../db");
 const axios = require("axios");
 const countriesRouter = require("./countries")
 const activitiesRouter = require("./activities");
@@ -10,6 +10,8 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
+router.use("/countries", countriesRouter);
+router.use("/activities", activitiesRouter);
 
 axios
 .get("https://restcountries.com/v3/all")
@@ -34,6 +36,4 @@ axios
 .then((country) => Country.bulkCreate(country));
 
 
-router.use("/countries", countriesRouter);
-router.use("/activities", activitiesRouter);
 module.exports = router;

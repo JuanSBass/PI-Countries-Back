@@ -2,21 +2,6 @@ const { Router } = require("express");
 const router = Router();
 const { Activity, Country } = require("../db");
 
-// router.post("/", async (req, res) => {
-//   try {
-//     const { name, dificult, duration, season, countryId } = req.body; // MEX
-//     const newActivity = await Activity.findOrCreate({
-//       where: { name },
-//       defaults: { dificult, duration, season },
-//     });
-//     const country = await Country.findByPk(countryId);
-//     country.addActivity(newActivity[0]);
-//     res.status(201).send({ newActivity, countryId });
-//   } catch (error) {
-//     res.status(404).send("Error, datos inválidos.");
-//   }
-// });
-
 
 router.post("/", async (req, res) => {
   try {
@@ -43,7 +28,7 @@ router.get("/", async (req, res) => {
     const activities = await Activity.findAll();
     res.status(200).send(activities);
   } catch (error) {
-    res.status(404).send("Error, datos inválidos.");
+    res.status(404).send(error.message);
   }
 });
 
