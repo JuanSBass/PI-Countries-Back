@@ -18,17 +18,17 @@ axios
 .then((response) => response.data)
 .then((data) => {
   const arrData = [];
-  data.map((pais) => {
-    arrData.forEach({
+  data.forEach((pais) => {
+    arrData.push({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
       flag: pais.flags[0],
-      continent: pais.continents[0] && "sin información",
+      continent: pais.continents[0],
       capital: pais.capital && "sin información",
       subregion: pais.subregion && "sin información",
       population: pais.population && "sin información",
-      maps: pais.maps.googleMaps && "sin información",
-      area: pais.area && "sin información",
+      maps: pais.maps.googleMaps,
+      area: pais.area && "sin información"
     });
   });
   return arrData;
