@@ -13,12 +13,12 @@ const router = Router();
 router.use("/countries", countriesRouter);
 router.use("/activities", activitiesRouter);
 
-const arrData = [];
 axios
 .get("https://restcountries.com/v3/all")
 .then((response) => response.data)
 .then((data) => {
   data.forEach((pais) => {
+    const arrData = [];
     arrData.push({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
@@ -33,7 +33,8 @@ axios
   });
   return arrData;
 })
-.then((country) => Country.bulkCreate(country));
+.then((country) => Country.bulkCreate(country))
+.catch(err => console.log(err.message));
 
 
 
