@@ -26,9 +26,9 @@ axios
       continent: pais.continents[0],
       capital: pais.capital || "sin información",
       subregion: pais.subregion || "sin información",
-      population: pais.population,
-      maps: pais.maps.googleMaps,
-      area: pais.area
+      population: pais.population || 0,
+      maps: pais.maps.googleMaps || "sin información",
+      area: pais.area || 0
     });
   });
   return arrData;
