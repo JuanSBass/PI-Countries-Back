@@ -23,9 +23,9 @@ axios
       countryId: pais.cca3,
       name: pais.translations.spa.common,
       flag: pais.flags[0],
-      continent: pais.continents[0],
+      continent: pais.continents[0] || "sin información",
       capital: pais.capital || "sin información",
-      subregion: pais.subregion,
+      subregion: pais.subregion || "sin información",
       population: pais.population,
       maps: pais.maps.googleMaps,
       area: pais.area
@@ -34,7 +34,7 @@ axios
   return arrData;
 })
 .then((country) => Country.bulkCreate(country))
-.catch(err => console.log(err.message));
+// .catch(err => console.log(err.message));
 
 
 
