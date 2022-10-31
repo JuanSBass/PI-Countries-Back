@@ -22,13 +22,13 @@ axios
     arrData.push({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
-      flag: pais.flags[0] || "sin información",
+      flag: pais.flags[0],
       continent: pais.continents[0],
       capital: pais.capital || "sin información",
       subregion: pais.subregion || "sin información",
-      population: pais.population || 0,
+      population: pais.population,
       maps: pais.maps.googleMaps,
-      area: pais.area || 0
+      area: pais.area
     });
   });
   return arrData;
