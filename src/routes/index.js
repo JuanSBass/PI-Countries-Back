@@ -13,11 +13,11 @@ const router = Router();
 router.use("/countries", countriesRouter);
 router.use("/activities", activitiesRouter);
 
+const arrData = [];
 axios
 .get("https://restcountries.com/v3/all")
 .then((response) => response.data)
 .then((data) => {
-  const arrData = [];
   data.forEach((pais) => {
     arrData.push({
       countryId: pais.cca3,
