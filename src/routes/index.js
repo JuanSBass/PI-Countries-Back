@@ -21,20 +21,19 @@ axios
   data.forEach((pais) => {
     arrData.push({
       countryId: pais.cca3,
-      name: pais.translations.spa.common,
+      name: pais.translations.spa.common || pais.name.common,
       flag: pais.flags[0],
       continent: pais.continents[0] || "sin información",
       capital: pais.capital || "sin información",
       subregion: pais.subregion || "sin información",
-      population: pais.population,
-      maps: pais.maps.googleMaps,
-      area: pais.area
+      population: pais.population || 0,
+      maps: pais.maps.googleMaps || "sin información",
+      area: pais.area || 0
     });
   });
   return arrData;
 })
 .then((country) => Country.bulkCreate(country))
-// .catch(err => console.log(err.message));
 
 
 
