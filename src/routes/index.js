@@ -17,18 +17,18 @@ axios
 .get("https://restcountries.com/v3/all")
 .then((response) => response.data)
 .then((data) => {
+  const arrData = [];
   data.forEach((pais) => {
-    const arrData = [];
     arrData.push({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
       flag: pais.flags[0],
-      continent: pais.continents[0] || "sin información",
+      continent: pais.continents[0],
       capital: pais.capital || "sin información",
-      subregion: pais.subregion || "sin información",
-      population: pais.population || 0,
-      maps: pais.maps.googleMaps || "sin información",
-      area: pais.area || 0
+      subregion: pais.subregion,
+      population: pais.population,
+      maps: pais.maps.googleMaps,
+      area: pais.area
     });
   });
   return arrData;
