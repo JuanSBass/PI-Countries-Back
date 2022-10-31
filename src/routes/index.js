@@ -23,7 +23,7 @@ axios
       countryId: pais.cca3,
       name: pais.translations.spa.common,
       flag: pais.flags[0],
-      continent: pais.continents[0],
+      continent: pais.continents[0] || "sin información",
       capital: pais.capital || "sin información",
       subregion: pais.subregion || "sin información",
       population: pais.population || 0,
