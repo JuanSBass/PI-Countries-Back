@@ -24,11 +24,11 @@ axios
       name: pais.translations.spa.common,
       flag: pais.flags[0],
       continent: pais.continents[0],
-      capital: pais.capital,
+      capital: pais.capital || "Sin información",
       subregion: pais.subregion,
       population: pais.population,
       maps: pais.maps.googleMaps,
-      area: pais.area || 0
+      area: pais.area
     });
   });
   return arrData;
