@@ -24,7 +24,7 @@ axios
       name: pais.translations.spa.common,
       flag: pais.flags[0],
       continent: pais.continents[0],
-      capital: pais.capital || "Sin información",
+      capital: pais.capital,
       subregion: pais.subregion,
       population: pais.population,
       maps: pais.maps.googleMaps,
