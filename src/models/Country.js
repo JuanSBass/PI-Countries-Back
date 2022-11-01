@@ -12,16 +12,16 @@ module.exports = (sequelize) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      // unique: true
+      unique: true
     },
     flag: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "Sin información"
     },
     continent: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      defaultValue: "Sin información"
     },
     capital: {
       type: DataTypes.JSON,
