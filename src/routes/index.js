@@ -17,9 +17,9 @@ axios
 .get("https://restcountries.com/v3/all")
 .then((response) => response.data)
 .then((data) => {
-  const arrData = [];
+  // const arrData = [];
   data.forEach((pais) => {
-    arrData.push({
+    Country.create({
       countryId: pais.cca3,
       name: pais.translations.spa.common,
       flag: pais.flags[0],
@@ -31,9 +31,9 @@ axios
       area: pais.area
     });
   });
-  return arrData;
+  // return arrData;
 })
-.then((countries) => Country.bulkCreate(countries))
+// .then((countries) => Country.bulkCreate(countries))
 
 
 

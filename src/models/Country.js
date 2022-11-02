@@ -36,7 +36,7 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
     },
     area: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
     },
     maps:{
       type: DataTypes.STRING,
