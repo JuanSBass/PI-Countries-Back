@@ -16,7 +16,7 @@ let sequelize =
         username: DB_USER,
         password: DB_PASSWORD,
         pool: {
-          max: 3,
+          max: 5,
           min: 1,
           idle: 10000,
         },
