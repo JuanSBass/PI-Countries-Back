@@ -14,7 +14,7 @@ let sequelize =
         username: DB_USER,
         password: DB_PASSWORD,
         pool: {
-          max: 5,
+          max: 3,
           min: 1,
           acquire: 30000,
           idle: 10000,
@@ -61,8 +61,8 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Para relacionarlos hacemos un destructuring
 const { Activity, Country } = sequelize.models;
 
-Country.belongsToMany(Activity, { through: "Country_Activity" });
-Activity.belongsToMany(Country, { through: "Country_Activity" });
+Country.belongsToMany(Activity, { through: "country_activity" });
+Activity.belongsToMany(Country, { through: "country_activity" });
 
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
