@@ -19,10 +19,19 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
 const { conn } = require('./src/db.js');
+const { uploadCountry } = require("./src/routes/api");
 // prueba
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT || 3001, () => {
+// conn.sync({ force: false }).then(() => {
+//   server.listen(process.env.PORT || 3001, () => {
+//     console.log('%s listening at 3001'); // eslint-disable-line no-console
+//   });
+// });
+
+// Syncing all the models at once.
+conn.sync({ force: false }).then(() => {
+  server.listen(process.env.PORT || 3001, async () => {
     console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+    await uploadCountry()
+  })
+})
